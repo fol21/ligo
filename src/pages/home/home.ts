@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -15,29 +15,36 @@ export class HomePage {
       sinal: 50,
       preco3g: 10,
       selected: true,
-      icone: "oi-icone"
+      icone: "oi_icone",
+      servicos: ['4G', '3G', '2G']
     }, {
       nome: 'Tim',
       sinal: 30,
       preco3g: 12,
       selected: false,
-      icone: "tim-icone"
+      icone: "tim_icone",
+      servicos: ['3G', '2G']
     }, {
       nome: 'Claro',
       sinal: 40,
       preco3g: 9,
       selected: false,
-      icone: "claro-icone"
+      icone: "claro_icone",
+      servicos: ['4G', '3G']
     }, {
       nome: 'Vivo',
       sinal: 60,
       preco3g: 11,
       selected: false,
-      icone: "vivo-icone"
+      icone: "vivo_icone",
+      servicos: ['3G', '2G']
     }];
 
+    boundary: any = 30;
+    controle: boolean = true;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              private toastCtrl: ToastController) {
 
   }
 
@@ -48,5 +55,11 @@ export class HomePage {
     }
     this.operadoras[index].selected = true;
     console.log(this.operadoras);
+    const toast = this.toastCtrl.create({
+      message: `Você mudou para a operadora ${this.operadoras[index].nome}`,
+      duration: 2500
+    });
+    toast.present();
+
   }
 }

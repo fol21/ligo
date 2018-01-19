@@ -1,20 +1,50 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Início</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-row>
+    <ion-col class="text-header">
+          Sua fatura é de R$ <span class="text-header-valor">28,30</span>
+    </ion-col>
+  </ion-row>
+  <ion-item>
+      <ion-label>Utilizar plano controle?</ion-label>
+      <ion-toggle [(ngModel)]="controle"></ion-toggle>
+  </ion-item>
+  <ion-row *ngIf="controle">
+    <ion-col>
+      <ion-range [(ngModel)]="boundary" min=30 max=150>
+        <span range-left>R$ 30</span>
+        <span range-right>R$ 150</span>
+      </ion-range>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="controle">
+    <ion-col class="valor-fatura">
+      Valor máximo da fatura: <span class="valor-fatura-numero">{{boundary}}</span> R$
+    </ion-col>
+  </ion-row>
+  <ion-row style="height: 40px">
+  </ion-row>
+  <ion-row>
+    <ion-col style="font-size: 20px;text-align: left">
+      Operadoras
+    </ion-col>
+  </ion-row>
+
   <ion-list>
     <ion-item *ngFor="let op of operadoras; let i = index" (click)="select(i)" class="item item-block item-ios {{op.selected}}">
       <ion-thumbnail item-start>
-        <img src="./assets/imgs/{{op.icone}}.png">
+        <img src="../../assets/imgs/{{op.icone}}.png">
       </ion-thumbnail>
-      <h2>{{op.nome}}</h2>
+      <h2><ion-badge *ngFor="let serv of op.servicos">{{serv}}</ion-badge></h2>
       <p>
         <progress-bar progress="{{op.sinal}}" operadora="{{op.nome}}"></progress-bar>
       </p>
-      <button ion-button clear item-end>View</button>
+
     </ion-item>
   </ion-list>
 
