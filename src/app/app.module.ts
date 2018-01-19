@@ -11,6 +11,7 @@ import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    ProfilePage
+    ProfilePage,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
