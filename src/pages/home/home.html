@@ -8,7 +8,7 @@
   <ion-list>
     <ion-item *ngFor="let op of operadoras; let i = index" (click)="select(i)" class="item item-block item-ios {{op.selected}}">
       <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
+        <img src="./assets/imgs/{{op.icone}}.png">
       </ion-thumbnail>
       <h2>{{op.nome}}</h2>
       <p>
