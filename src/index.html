@@ -18,6 +18,20 @@
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDv1zdWgdXrr9fGp3ipBMU3KcDCQtt-zIM",
+      authDomain: "onlie-639f0.firebaseapp.com",
+      databaseURL: "https://onlie-639f0.firebaseio.com",
+      projectId: "onlie-639f0",
+      storageBucket: "",
+      messagingSenderId: "86374517342"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {

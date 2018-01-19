@@ -1,5 +1,10 @@
 page-profile {
 
+    ion-content
+    {
+        background-color: #093954 !important;   
+    }
+
     .title
     {
         text-align: center;
@@ -11,7 +16,7 @@ page-profile {
 
     img {
         width: 40%;
-        border-radius: 50%;
+        border-radius: 20%;
         display: block;
         margin-left: auto;
         margin-right: auto;       

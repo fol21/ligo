@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+declare var firebase;
+
 /**
  * Generated class for the ProfilePage page.
  *
