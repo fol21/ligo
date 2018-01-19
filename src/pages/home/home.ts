@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
   selectedItem: string;
 
@@ -40,12 +40,17 @@ export class HomePage {
       servicos: ['3G', '2G']
     }];
 
-    boundary: any = 30;
+    boundary: number = 39.90;
     controle: boolean = true;
+
 
   constructor(public navCtrl: NavController,
               private toastCtrl: ToastController) {
 
+  }
+
+  ngOnInit() {
+    this.boundary = 39.90;
   }
 
   select(index) {

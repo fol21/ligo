@@ -5,33 +5,40 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-row style="height: 20px">
+  </ion-row>
+
+    <ion-row style="height: 40px" >
+    </ion-row>
+    <ion-row>
+      <ion-col class="text-header">
+            Sua fatura é de R$ <span class="text-header-valor">28,30</span>
+      </ion-col>
+    </ion-row>
+    <ion-item >
+        <ion-label style="font-size:16px; font-family: roboto">Utilizar plano controle?</ion-label>
+        <ion-toggle [(ngModel)]="controle"></ion-toggle>
+    </ion-item>
+    <ion-row *ngIf="controle">
+      <ion-col>
+        <ion-range [(ngModel)]="boundary" min=39.9 max=150 class="text-range">
+          <span range-left>R$ 39.90</span>
+          <span range-right>R$ 150</span>
+        </ion-range>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="controle">
+      <ion-col class="valor-fatura">
+        Valor máximo da fatura: R$ <span class="valor-fatura-numero">{{boundary | number : '1.2-2'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row style="height: 40px">
+    </ion-row>
+  <ion-row style="height: 20px">
+  </ion-row>
   <ion-row>
-    <ion-col class="text-header">
-          Sua fatura é de R$ <span class="text-header-valor">28,30</span>
-    </ion-col>
-  </ion-row>
-  <ion-item>
-      <ion-label>Utilizar plano controle?</ion-label>
-      <ion-toggle [(ngModel)]="controle"></ion-toggle>
-  </ion-item>
-  <ion-row *ngIf="controle">
-    <ion-col>
-      <ion-range [(ngModel)]="boundary" min=30 max=150>
-        <span range-left>R$ 30</span>
-        <span range-right>R$ 150</span>
-      </ion-range>
-    </ion-col>
-  </ion-row>
-  <ion-row *ngIf="controle">
-    <ion-col class="valor-fatura">
-      Valor máximo da fatura: <span class="valor-fatura-numero">{{boundary}}</span> R$
-    </ion-col>
-  </ion-row>
-  <ion-row style="height: 40px">
-  </ion-row>
-  <ion-row>
-    <ion-col style="font-size: 20px;text-align: left">
-      Operadoras
+    <ion-col style="font-size: 15px;text-align: center">
+      OPERADORAS
     </ion-col>
   </ion-row>
 
