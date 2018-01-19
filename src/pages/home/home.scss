@@ -1,23 +1,36 @@
 page-home {
   .true {
-    background-color: #cccccc !important;
+    background-color: #efecec !important;
   }
   .text-header {
     text-align: center;
     font-size: 15px;
+    font-family: 'roboto';
+    color: #093954 !important;
   }
 
   .text-header-valor {
     font-size: 20px;
-    color: #267ff1;
+    color: #139caa;
   }
 
   .valor-fatura {
     font-size: 15px;
+    text-align: center;
+    color: #093954 !important;
+
   }
 
   .valor-fatura-numero {
     font-size: 18px;
     color: #12b658;
+  }
+
+  .back-geral{
+    background-color: #4ad0f8 !important;
+  }
+
+  .text-range {
+    color: #093954 !important;
   }
 }

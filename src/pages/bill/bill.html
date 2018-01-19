@@ -1,13 +1,16 @@
   <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Faturas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-
-  
+<ion-content>
+  <ion-list>
+      <ion-item *ngFor="let fat of faturas; let i = index" (click)="select(i)" class="item-valor">
+        <div item-left>{{fat.mes}}</div>
+        <div item-right class="{{fat.cor}}">{{fat.valor}}</div>
+      </ion-item>
+    </ion-list>
 </ion-content>
